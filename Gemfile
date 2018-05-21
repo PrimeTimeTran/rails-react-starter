@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -22,13 +24,12 @@ gem 'redis', '~> 4.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# ActiveAdmin
-gem 'devise'
 gem 'activeadmin'
-
+gem 'devise'
 gem 'pry'
 gem 'pry-nav'
 gem 'pry-remote', '~> 0.1.8'
+gem 'rubocop', '~> 0.56.0', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -37,12 +38,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :development, :test do
-  gem 'factory_bot_rails', '~> 4.0'
-  gem 'shoulda-matchers', '~> 3.1'
-  gem 'faker'
   gem 'database_cleaner'
+  gem 'factory_bot_rails', '~> 4.0'
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 3.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 3.5'
 end
 
@@ -54,4 +55,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

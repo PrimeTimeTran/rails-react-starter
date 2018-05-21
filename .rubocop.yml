@@ -1,0 +1,16 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.5.0
+  DisplayCopNames: true
+
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*.rb'
+    - 'config/initializers/devise.rb'
+
+Metrics/MethodLength:
+  Max: 13
+
+Metrics/LineLength:
+  Max: 130
